@@ -1,0 +1,10 @@
+"""This is the demo from golang-dorset talks"""
+
+module (
+    name = "bazel_demo",
+    repo_name = "com_github_sarvsav",
+    version = "1.0.0"
+)
+
+# Bazel module dependencies
+bazel_dep(name = "rules_go", version = "0.46.0")

@@ -1,0 +1,21 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "lib",
+    srcs = ["main.go"],
+    importpath = "",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "with-bazel",
+    embed = [":golang_dorset_bazel_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "golang_dorset_bazel_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/sarvsav/golang_dorset_bazel",
+    visibility = ["//visibility:private"],
+)
